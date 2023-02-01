@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<style>
+
+body {
+  background-color: rgb(178, 222, 237);
+}
+
+
+a {
+  text-decoration: none;
+  color: #008CBA;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+ <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" herf="{% url 'index' %}">SCIENTIFIC</a>
+      <form class="d-flex">
+        {% if user.is_authenticated %}
+
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" role="buton" aria-expanded="false"><i class="fas fa-user"></i></a>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Se déconnecter</a></li>
+            
+          </ul>
+        </div>
+        {% endif %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Recherche" name="query" value="{{ request.GET.query }}">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+        
+      
+      </form>
+      
+      
+    </div>
+    
+  </nav>
+
+
+
+  
+ 
