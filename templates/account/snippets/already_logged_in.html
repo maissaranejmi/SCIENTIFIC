@@ -1,0 +1,32 @@
+{% load i18n %}
+{% load account %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  background-color: rgb(178, 222, 237);
+}
+
+
+button {
+  color: rgb(79, 84, 90);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #008CBA;
+}
+
+</style>
+</head>
+<body>
+
+
+
+{% user_display user as user_display %}
+<p><strong>{% trans "Note" %}:</strong> {% blocktrans %}you are already logged in as {{ user_display }}.{% endblocktrans %}</p>
